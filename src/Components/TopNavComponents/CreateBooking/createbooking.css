@@ -1,0 +1,7 @@
+.CreateBooking_Page {
+  align-items: flex-start;
+}
+
+.CreateBooking_Page > h2 {
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+/*
+
+
+
+
+magic responsive
+width: 100vw;
+height: 100vh;
+background-size: cover;
+background-position: center; 
+display: flex;
+justify-content: center;
+align-items: center;
+*/
+/*
+PHONES AND SMALLER
+@media only screen and (max-width: 425px) and (min-width: 320px) {
+}
+TABLET
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+}
+LAPTOP
+@media only screen and (min-width: 769px) {
+}
+
+
+
+
+
+
+
+*/

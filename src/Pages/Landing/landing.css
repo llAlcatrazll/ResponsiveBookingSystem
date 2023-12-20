@@ -1,0 +1,142 @@
+.LandingPage_Background_Image {
+  background-image: url("/langding_bg_img.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+.Background_Darknerner {
+  background-color: #00000095;
+  align-items: stretch;
+  align-items: center;
+}
+.TopNav_Header {
+  background-color: red;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 30px;
+}
+#TopNav_CJC_Logo {
+  height: auto;
+  width: 50px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+#User_Profile_Logo_Img {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
+#User_Profile_Logo_Img {
+  margin-right: 15px;
+}
+.User_Nav_Profile_Bar {
+  align-items: center;
+  background-color: red;
+  justify-content: space-around;
+  max-height: 55px;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-right: 20px;
+}
+.User_Nav_Profile_Bar:hover {
+  align-items: center;
+  width: min-content;
+  height: min-content;
+  background-color: #ca0202;
+  max-height: 55px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+.User_Nav_Profile_Bar > p {
+  font-size: large;
+  font-weight: 500;
+  margin: 0 20px;
+  text-wrap: nowrap;
+  align-self: center;
+}
+#User_Option_Box {
+  margin-right: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 290px;
+  height: auto;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  right: 0;
+  border: solid 1px #000000;
+}
+#User_Interchanged_Display_Items {
+  position: absolute;
+  margin-top: 60px;
+  right: 0;
+}
+.Left_TopNav_Divsion {
+  align-items: center;
+}
+.Left_TopNav_li_Spacer > li {
+  list-style-type: none;
+}
+.Left_TopNav_li_Spacer {
+  width: 450px;
+  justify-content: space-between;
+}
+.Page_Option_Toggle {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  margin-top: 65px;
+  margin-right: 5px;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+}
+.Page_Option_Pane {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  right: 0;
+  top: calc(30% - 105px);
+  background-color: rgb(255, 255, 255);
+  color: black;
+  margin-right: 8px;
+  border-radius: 4px;
+  list-style-type: none;
+  text-align: left;
+  padding: 10px 10px;
+}
+.Page_OutPut {
+  width: auto;
+  height: auto;
+  box-shadow: 0 0 2px 2px #00000095;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+}
+.Laptop_display {
+  min-width: 700px;
+  min-height: 60vh;
+  max-width: 1200px;
+  max-height: 600px;
+}
+.wh-auto {
+  width: auto;
+  height: auto;
+}
+.Tablet_display {
+  width: 95vw;
+  min-height: 60vh;
+  margin-top: 2%;
+}
+.Phone_dispaly {
+  width: 95vw;
+  min-height: 60vh;
+  margin-top: 2%;
+}
