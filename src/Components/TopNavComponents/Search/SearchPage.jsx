@@ -1,3 +1,8 @@
 export default function SearchPage() {
-  return <div>Search Page</div>;
+  return (
+    <div className="Page_Header">
+      <h2>Search Page</h2>
+      <hr />
+    </div>
+  );
 }

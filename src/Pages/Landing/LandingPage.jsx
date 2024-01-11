@@ -26,7 +26,7 @@ export default function LandingPage() {
     setter((current) => !current);
   };
   // Page Changer
-  const [CreateBooking, setCreateBooking] = useState(false);
+  const [CreateBooking, setCreateBooking] = useState(true);
   const [Calendar, setCalendar] = useState(false);
   const [Booking, setBooking] = useState(false);
   const [Search, setSearch] = useState(false);
@@ -41,10 +41,17 @@ export default function LandingPage() {
     Value_Reverser(setPageOptions);
     Page_Changer(page);
   }
-
+  function checkActiveAndChangeId() {
+    let createBookingItem = document.getElementById("create");
+    if (createBookingItem.classList.contains("active")) {
+      createBookingItem.id = "newId"; // Change the id to whatever you want
+    }
+  }
+  window.onload = checkActiveAndChangeId;
   return (
     <div className="LandingPage_Background_Image bg-format vw100">
       <div className="Background_Darknerner flex-col vw100">
+        {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
         {/* PAGE TOP NAV */}
         <MediaQuery minWidth={858}>
           <header className="TopNav_Header flex-row">
@@ -105,6 +112,7 @@ export default function LandingPage() {
             <></>
           )}
         </MediaQuery>
+        {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
         {/* BODY OF THE PAGE */}
         <div
           className={

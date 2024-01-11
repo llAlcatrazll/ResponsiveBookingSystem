@@ -1,0 +1,11 @@
+.BookingList_Page {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-align: left;
+}
+.BookingList_Page > h2 {
+  margin: 0;
+  font-size: xx-large;
+  width: 900px;
+}

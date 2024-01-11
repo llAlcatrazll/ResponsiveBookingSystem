@@ -6,7 +6,9 @@ export default function LoginPage() {
   const [emailUser, setEmailUser] = useState("");
   const [passwordUser, setPasswordUser] = useState("");
   const navigate = useNavigate();
-
+  /*
+  nodejs express for log in auth
+  */
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -15,7 +17,7 @@ export default function LoginPage() {
         passwordUser,
       };
       // console.log(blog);
-      const response = await fetch("http://192.168.8.36:3002/", {
+      const response = await fetch("http://192.168.1.188:3002/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +62,9 @@ export default function LoginPage() {
               placeholder="Password"
               onChange={(e) => setPasswordUser(e.target.value)}
             />
-            <button type="Submit">Log In</button>
+            <button id="login_button" type="Submit">
+              Log In
+            </button>
           </form>
         </div>
       </div>

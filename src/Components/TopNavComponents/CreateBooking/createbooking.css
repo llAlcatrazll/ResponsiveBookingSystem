@@ -1,7 +1,42 @@
-.CreateBooking_Page {
+.Page_Header {
   align-items: flex-start;
+  background-color: white;
+  width: auto;
+  text-align: left;
+  padding: 10px;
+}
+.Page_Header > h2 {
+  margin: 0;
+  font-size: xx-large;
+  width: auto;
 }
 
-.CreateBooking_Page > h2 {
-  margin: 0;
+.Booking_Container > input {
+  background-color: white;
+  border-radius: 3px;
+  min-height: 40px;
+  border: 1px solid #00000070;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.flex-row > input[type="time"] {
+  background-color: white;
+  color: black;
+  border: 1px solid #00000070;
+  width: 100%;
+  margin: 0 25px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  min-height: 30px;
+}
+.flex-row > select {
+  background-color: white;
+  text-align: center;
+  color: black;
+  margin: 0 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  min-height: 40px;
+  width: 100%;
 }
