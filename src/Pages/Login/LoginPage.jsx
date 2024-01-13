@@ -17,7 +17,7 @@ export default function LoginPage() {
         passwordUser,
       };
       // console.log(blog);
-      const response = await fetch("http://192.168.1.188:3002/login", {
+      const response = await fetch("http://localhost:3002/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

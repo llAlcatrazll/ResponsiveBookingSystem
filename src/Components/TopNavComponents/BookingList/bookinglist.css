@@ -9,3 +9,7 @@
   font-size: xx-large;
   width: 900px;
 }
+#booking_list > h2 {
+  text-align: left;
+  margin-left: 20px;
+}

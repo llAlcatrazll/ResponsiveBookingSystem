@@ -9,7 +9,7 @@ export default function Bookinglistpage() {
   useEffect(() => {
     async function LoginToken() {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://192.168.1.188:3002/event", {
+      const response = await fetch("http://localhost:3002/event", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -22,9 +22,10 @@ export default function Bookinglistpage() {
 
   return (
     <div>
-      <div id="center_box">
+      <div id="booking_list ">
         <h2>Booking List</h2>
         <hr />
+        <div className="flex-row header_names">Event Name</div>
         <div id="booking-column">
           {datas &&
             datas.map((data, index) => <Eventcard key={index} data={data} />)}
