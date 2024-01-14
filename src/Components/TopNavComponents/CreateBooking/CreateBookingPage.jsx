@@ -25,7 +25,7 @@ export default function CreateBookingPage() {
     e.preventDefault();
     setDetailsConfirmation((current) => !current);
   };
-  const handlesubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const blog = {
       NameofEvent,
@@ -40,7 +40,7 @@ export default function CreateBookingPage() {
     console.log(blog);
 
     // Make a POST request to your server
-    const response = await fetch("/event", {
+    const response = await fetch("http://localhost:3002/writeToFile", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export default function CreateBookingPage() {
         </button>
       </div>
       <hr />
-      <form className="Booking_Container flex-col" onSubmit={handlesubmit}>
+      <form className="Booking_Container flex-col" onSubmit={handleSubmit}>
         {/* onSubmit={details_popup} */}
         <input
           required
@@ -168,7 +168,7 @@ export default function CreateBookingPage() {
         StartingTimeofEvent &&
         EndingTimeofEvent ? (
           <>
-            <button type="Submit" onClick={handlesubmit}>
+            <button type="Submit" onClick={handleSubmit}>
               {/* onClick={details_popup}> */}
               Continue
             </button>
@@ -198,7 +198,7 @@ export default function CreateBookingPage() {
               <button
                 onClick={(e) => {
                   details_popup(e);
-                  handlesubmit(e);
+                  handleSubmit(e);
                 }}
               >
                 Submit
