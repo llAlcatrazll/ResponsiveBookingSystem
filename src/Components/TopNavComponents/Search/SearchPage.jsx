@@ -18,11 +18,13 @@ const fetchEvents = async () => {
     return result.data;
   }
 };
-
 export default function SearchPage() {
   const { data: datas, error, isLoading } = useQuery("events", fetchEvents);
   const [sortField, setSortField] = useState("");
-
+  const [searchTerm, setSearchTerm] = useState("");
+  if (isLoading || error || !datas) {
+    return <div>Loading...</div>;
+  }
   let sortedDatas = [...datas];
   if (sortField === "date") {
     sortedDatas = sortedDatas.sort(
@@ -43,6 +45,10 @@ export default function SearchPage() {
       a.eventStatus.localeCompare(b.eventStatus)
     );
   }
+  // Filter the sortedDatas array based on the searchTerm
+  sortedDatas = sortedDatas.filter((item) =>
+    item.NameofEvent.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div>
@@ -55,6 +61,12 @@ export default function SearchPage() {
             <option value="facility">Facility</option>
             <option value="status">Status</option>
           </select>
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
         <hr />
         <div className="flex-row header_names">Event Name</div>

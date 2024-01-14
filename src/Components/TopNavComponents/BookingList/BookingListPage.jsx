@@ -22,7 +22,9 @@ const fetchEvents = async () => {
 export default function Bookinglistpage() {
   const { data: datas, error, isLoading } = useQuery("events", fetchEvents);
   const [sortField, setSortField] = useState("");
-
+  if (isLoading || error || !datas) {
+    return <div>Loading...</div>;
+  }
   let sortedDatas = [...datas];
   if (sortField === "date") {
     sortedDatas = sortedDatas.sort(
