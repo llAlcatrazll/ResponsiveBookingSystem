@@ -1,12 +1,11 @@
 .eventcardbox {
   background-color: white;
   min-height: 35px;
-  border: solid 1px #00000050;
   border-radius: 4px;
-  margin: 10px 10px;
+  margin: 10px 0;
   height: auto;
   padding-top: 10px;
-  font-family: Roboto;
+  font-weight: 400;
 }
 #facility {
   right: 20px;
@@ -16,10 +15,9 @@
 }
 .display-even {
   justify-content: space-between;
-  width: 1000px;
+  width: 100%;
 }
 .header_names {
-  background-color: red;
   min-height: 40px;
 }
 #booking-column {
@@ -33,4 +31,20 @@
 }
 .overflow_y {
   overflow-y: scroll;
+}
+.event_card_components > div {
+  width: 191px;
+  text-align: center;
+  overflow-y: hidden;
+  max-height: 40px;
+
+  border-left: solid 1px black;
+  font-size: small;
+}
+.eventstatus {
+  text-align: center;
+  justify-content: center;
+}
+#cirlce_margin {
+  margin-left: 10px;
 }

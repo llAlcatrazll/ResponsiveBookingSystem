@@ -117,7 +117,7 @@ export default function LandingPage() {
         <div
           className={
             isPC ? (
-              "Page_OutPut Laptop_display wh-auto overflow_y"
+              "Page_OutPut Laptop_display overflow_y special_booking_list"
             ) : isTablet ? (
               "Page_OutPut Tablet_display wh-auto overflow_y"
             ) : isMobile ? (

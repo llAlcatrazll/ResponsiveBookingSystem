@@ -40,6 +40,10 @@ export default function Bookinglistpage() {
     sortedDatas = sortedDatas.sort((a, b) =>
       a.FacilityofEvent.localeCompare(b.FacilityofEvent)
     );
+  } else if (sortField === "college") {
+    sortedDatas = sortedDatas.sort((a, b) =>
+      a.CollegeAffiliation.localeCompare(b.CollegeAffiliation)
+    );
   } else if (sortField === "status") {
     sortedDatas = sortedDatas.sort((a, b) =>
       a.eventStatus.localeCompare(b.eventStatus)
@@ -47,7 +51,7 @@ export default function Bookinglistpage() {
   }
 
   return (
-    <div>
+    <div className="booking_list_bg">
       <div id="booking_list ">
         <h2>Booking List</h2>
         <div>
@@ -56,10 +60,20 @@ export default function Bookinglistpage() {
             <option value="time">Time</option>
             <option value="facility">Facility</option>
             <option value="status">Status</option>
+            <option value="college">College</option>
           </select>
         </div>
         <hr />
-        <div className="flex-row header_names">Event Name</div>
+        <div className="flex-row header_names">
+          <div>Event Name</div>
+          <div>Purpose</div>
+          <div>Venue</div>
+          <div>Time</div>
+          <div>Date</div>
+          <div>College</div>
+          <div>Venue</div>
+          <div>Status</div>
+        </div>
         <div id="booking-column">
           {isLoading && <div>Loading...</div>}
           {error && <div>Error: {error.message}</div>}

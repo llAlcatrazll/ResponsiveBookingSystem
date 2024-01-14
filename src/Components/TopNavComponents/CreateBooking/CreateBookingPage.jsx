@@ -12,6 +12,7 @@ export default function CreateBookingPage() {
   const [StartingTimeofEvent, setStartingTimeofEvent] = useState();
   const [DetailsConfirmation, setDetailsConfirmation] = useState(false);
   const [Facility, setFacility] = useState(false);
+  const [CollegeAffiliation, setCollegeAffiliation] = useState();
   const [Room, setRoom] = useState(false);
   const [eventStatus, seteventStatus] = useState("Pending");
 
@@ -25,6 +26,9 @@ export default function CreateBookingPage() {
     e.preventDefault();
     setDetailsConfirmation((current) => !current);
   };
+  const handleCollegeAffiliationChange = (event) => {
+    setCollegeAffiliation(event.target.value);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const blog = {
@@ -36,6 +40,7 @@ export default function CreateBookingPage() {
       EndingTimeofEvent,
       StartingTimeofEvent,
       eventStatus,
+      CollegeAffiliation,
     };
     console.log(blog);
 
@@ -158,6 +163,23 @@ export default function CreateBookingPage() {
                 <option value="m103">R103</option>
               </>
             )}
+          </select>
+        </span>
+        <span id="flex-row">
+          <select
+            name=""
+            id=""
+            required
+            onChange={handleCollegeAffiliationChange}
+          >
+            <option value="">Any</option>
+            <option value="COE">COE</option>
+            <option value="CABE">CABE</option>
+            <option value="CCIS">CCIS</option>
+            <option value="CEDAS">CEDAS</option>
+            <option value="CHS">CHS</option>
+            <option value="CSP">CSP</option>
+            <option value="Admin">Admin</option>
           </select>
         </span>
         {/* CHECK IF ALL DETAILED ARE FILLED IN */}

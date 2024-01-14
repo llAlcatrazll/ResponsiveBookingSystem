@@ -61,6 +61,16 @@ export default function SearchPage() {
             <option value="facility">Facility</option>
             <option value="status">Status</option>
           </select>
+          <select name="" id="">
+            <option value="">Any</option>
+            <option value="">COE</option>
+            <option value="">CABE</option>
+            <option value="">CCIS</option>
+            <option value="">CEDAS</option>
+            <option value="">CHS</option>
+            <option value="">CSP</option>
+            <option value="">Admin</option>
+          </select>
           <input
             type="text"
             placeholder="Search"
