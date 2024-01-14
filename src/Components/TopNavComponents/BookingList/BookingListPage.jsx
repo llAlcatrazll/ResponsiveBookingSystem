@@ -1,24 +1,25 @@
 import "./bookinglist.css";
 import Eventcard from "../../EventCard/EventCard.jsx";
+import { useQuery } from "react-query";
 
-import { useEffect, useState } from "react";
+const fetchEvents = async () => {
+  const token = localStorage.getItem("token");
+  const response = await fetch("http://localhost:3002/event", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const result = await response.json();
+    return result.data;
+  }
+};
 
 export default function Bookinglistpage() {
-  const [datas, setData] = useState(null);
-
-  useEffect(() => {
-    async function LoginToken() {
-      const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:3002/event", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      const result = await response.json();
-      setData(result.data);
-    }
-    LoginToken();
-  }, []);
+  const { data: datas, error, isLoading } = useQuery("events", fetchEvents);
 
   return (
     <div>
@@ -27,8 +28,10 @@ export default function Bookinglistpage() {
         <hr />
         <div className="flex-row header_names">Event Name</div>
         <div id="booking-column">
+          {isLoading && <div>Loading...</div>}
+          {error && <div>Error: {error.message}</div>}
           {datas &&
-            datas.map((data, index) => <Eventcard key={index} data={data} />)}
+            datas.map((item, index) => <Eventcard key={index} data={item} />)}
         </div>
       </div>
     </div>

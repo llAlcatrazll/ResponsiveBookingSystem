@@ -117,11 +117,11 @@ export default function LandingPage() {
         <div
           className={
             isPC ? (
-              "Page_OutPut Laptop_display wh-auto"
+              "Page_OutPut Laptop_display wh-auto overflow_y"
             ) : isTablet ? (
-              "Page_OutPut Tablet_display wh-auto"
+              "Page_OutPut Tablet_display wh-auto overflow_y"
             ) : isMobile ? (
-              "Page_OutPut Phone_dispaly wh-auto"
+              "Page_OutPut Phone_dispaly wh-auto overflow_y"
             ) : (
               <></>
             )

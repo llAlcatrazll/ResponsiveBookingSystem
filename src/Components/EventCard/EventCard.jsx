@@ -1,11 +1,14 @@
 import "./eventcard.css";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
-export default function Eventcard(data) {
+export default function Eventcard({ data }) {
   const [openCard, setopenCard] = useState(true);
-  console.log(data);
-  /**  PurposeofEvent,
-    DateofEvent,     */
+
+  if (!data) {
+    return null;
+  }
+
   const {
     NameofEvent,
     AdressofEvent,
@@ -15,7 +18,7 @@ export default function Eventcard(data) {
     DateofEvent,
     EndingTimeofEvent,
     eventStatus,
-  } = data.data;
+  } = data;
 
   const Value_Reverser = (setter) => {
     setter((current) => !current);
@@ -66,3 +69,15 @@ export default function Eventcard(data) {
     </>
   );
 }
+Eventcard.propTypes = {
+  data: PropTypes.shape({
+    NameofEvent: PropTypes.string,
+    AdressofEvent: PropTypes.string,
+    FacilityofEvent: PropTypes.string,
+    StartingTimeofEvent: PropTypes.string,
+    PurposeofEvent: PropTypes.string,
+    DateofEvent: PropTypes.string,
+    EndingTimeofEvent: PropTypes.string,
+    eventStatus: PropTypes.string,
+  }).isRequired,
+};

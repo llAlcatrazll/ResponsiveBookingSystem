@@ -1,23 +1,21 @@
-  import "./App.css";
-  import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-    RouterProvider,
-  } from "react-router-dom";
-  import LandingPage from "./Pages/Landing/LandingPage";
-  import LoginPage from "./Pages/Login/LoginPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./Pages/Landing/LandingPage";
+import LoginPage from "./Pages/Login/LoginPage";
+import { QueryClient, QueryClientProvider } from "react-query";
 
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <>
-        <Route path="/LandingPage" element={<LandingPage />} />
-        <Route path="/" element={<LoginPage />} />
-      </>
-    )
+const queryClient = new QueryClient();
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Routes>
+          <Route path="/LandingPage" element={<LandingPage />} />
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
+      </Router>
+    </QueryClientProvider>
   );
+};
 
-  function App() {
-    return <RouterProvider router={router} />;
-  }
-  export default App;
+export default App;

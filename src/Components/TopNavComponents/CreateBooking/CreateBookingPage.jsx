@@ -27,9 +27,6 @@ export default function CreateBookingPage() {
   };
   const handlesubmit = async (e) => {
     e.preventDefault();
-    {
-      details_popup;
-    }
     const blog = {
       NameofEvent,
       AdressofEvent,
@@ -41,8 +38,23 @@ export default function CreateBookingPage() {
       eventStatus,
     };
     console.log(blog);
-    console.log("Its working");
+
+    // Make a POST request to your server
+    const response = await fetch("/event", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(blog),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      console.log("Data sent successfully");
+    }
   };
+
   const clearInputs = async (e) => {
     e.preventDefault();
     setNameofEvent("");
@@ -65,7 +77,8 @@ export default function CreateBookingPage() {
         </button>
       </div>
       <hr />
-      <form className="Booking_Container flex-col" onSubmit={details_popup}>
+      <form className="Booking_Container flex-col" onSubmit={handlesubmit}>
+        {/* onSubmit={details_popup} */}
         <input
           required
           type="text"
@@ -147,9 +160,25 @@ export default function CreateBookingPage() {
             )}
           </select>
         </span>
-        <button type="Submit" onClick={details_popup}>
-          Continue
-        </button>
+        {/* CHECK IF ALL DETAILED ARE FILLED IN */}
+        {NameofEvent &&
+        PurposeofEvent &&
+        FacilityofEvent &&
+        DateofEvent &&
+        StartingTimeofEvent &&
+        EndingTimeofEvent ? (
+          <>
+            <button type="Submit" onClick={handlesubmit}>
+              {/* onClick={details_popup}> */}
+              Continue
+            </button>
+          </>
+        ) : (
+          <>
+            <button type="button">Fill in the details</button>
+          </>
+        )}
+
         {DetailsConfirmation ? (
           <>
             <div id="bg_blurr">.</div>
