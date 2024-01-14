@@ -38,12 +38,8 @@ class ActivityCalendarPage extends Component {
       }
 
       const formattedEvents = responseData.data.map((item) => {
-        const start = moment(
-          `${moment().format("YYYY-MM-DD")} ${item.StartingTimeofEvent}`
-        );
-        const end = moment(
-          `${moment().format("YYYY-MM-DD")} ${item.EndingTimeofEvent}`
-        );
+        const start = moment(`${item.DateofEvent}T${item.StartingTimeofEvent}`);
+        const end = moment(`${item.DateofEvent}T${item.EndingTimeofEvent}`);
         return {
           start: start.toDate(),
           end: end.toDate(),
