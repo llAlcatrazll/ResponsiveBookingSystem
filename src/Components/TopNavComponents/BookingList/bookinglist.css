@@ -15,13 +15,14 @@
 }
 .booking_list_bg {
   /* background-color: red; */
-  width: 1550px;
+  width: 1560px;
   height: 650px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .header_names > div {
   background-color: yellow;
-  width: 200px;
+  width: 176px;
   text-align: center;
   border-left: solid 1px black;
   font-weight: 700;

@@ -1,5 +1,5 @@
 .eventcardbox {
-  background-color: white;
+  /* background-color: red; */
   min-height: 35px;
   border-radius: 4px;
   margin: 10px 0;
@@ -33,7 +33,8 @@
   overflow-y: scroll;
 }
 .event_card_components > div {
-  width: 191px;
+  width: 176px;
+  /* width: 191px; */
   text-align: center;
   overflow-y: hidden;
   max-height: 40px;
@@ -47,4 +48,12 @@
 }
 #cirlce_margin {
   margin-left: 10px;
+}
+.event_card_components > div > button {
+  max-height: 40px;
+  align-self: center;
+  text-align: left;
+}
+.event_card_components > div > button:hover {
+  background-color: red;
 }

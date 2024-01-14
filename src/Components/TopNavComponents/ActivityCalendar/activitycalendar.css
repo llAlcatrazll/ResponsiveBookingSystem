@@ -1,0 +1,15 @@
+.rbc-calendar {
+  width: 1300px;
+  height: 700px !important;
+}
+.rbc-day-bg {
+}
+.rbc-row-bg {
+  height: 100px;
+}
+.rbc-month-view {
+  height: 200px;
+}
+.rbc-month-row {
+  height: 50px !important;
+}

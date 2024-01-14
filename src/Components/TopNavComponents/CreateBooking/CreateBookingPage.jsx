@@ -31,7 +31,10 @@ export default function CreateBookingPage() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Generate a random ID
+    const id = Math.random().toString(36).substring(2);
     const blog = {
+      id,
       NameofEvent,
       AdressofEvent,
       PurposeofEvent,
@@ -42,6 +45,7 @@ export default function CreateBookingPage() {
       eventStatus,
       CollegeAffiliation,
     };
+
     console.log(blog);
 
     // Make a POST request to your server
