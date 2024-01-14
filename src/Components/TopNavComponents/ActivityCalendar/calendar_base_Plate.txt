@@ -1,7 +1,10 @@
 import { Component } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
+
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+
+// import "./App.css";
 
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -10,51 +13,20 @@ const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
 
 class ActivityCalendarPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      events: [],
-    };
-  }
-
-  componentDidMount() {
-    const fetchData = async () => {
-      const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:3002/event", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      const responseData = await response.json();
-
-      if (!Array.isArray(responseData.data)) {
-        console.error(
-          "Expected an array but received",
-          typeof responseData.data,
-          responseData.data
-        );
-        return;
-      }
-
-      const formattedEvents = responseData.data.map((item) => {
-        const start = moment(
-          `${moment().format("YYYY-MM-DD")} ${item.StartingTimeofEvent}`
-        );
-        const end = moment(
-          `${moment().format("YYYY-MM-DD")} ${item.EndingTimeofEvent}`
-        );
-        return {
-          start: start.toDate(),
-          end: end.toDate(),
-          title: item.NameofEvent,
-        };
-      });
-      this.setState({ events: formattedEvents });
-    };
-    fetchData();
-  }
-
+  state = {
+    events: [
+      {
+        start: moment("2023-11-26T10:30:00").toDate(),
+        end: moment("2023-11-26T12:00:00").toDate(),
+        title: "LIRC Tournament",
+      },
+      {
+        start: moment("2023-11-26T14:00:00").toDate(),
+        end: moment("2023-11-26T16:00:00").toDate(),
+        title: "Esports Games",
+      },
+    ],
+  };
   onEventResize = (data) => {
     const { start, end } = data;
     this.setState((state) => {
