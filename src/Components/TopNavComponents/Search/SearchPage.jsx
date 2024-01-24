@@ -55,13 +55,17 @@ export default function SearchPage() {
       <div id="booking_list ">
         <h2>Search Page</h2>
         <div>
-          <select name="" id="" onChange={(e) => setSortField(e.target.value)}>
+          <select
+            name=""
+            className="affiliation_opt"
+            onChange={(e) => setSortField(e.target.value)}
+          >
             <option value="date">Date</option>
             <option value="time">Time</option>
             <option value="facility">Facility</option>
             <option value="status">Status</option>
           </select>
-          <select name="" id="">
+          <select name="" className="affiliation_opt">
             <option value="">Any</option>
             <option value="">COE</option>
             <option value="">CABE</option>
@@ -72,6 +76,7 @@ export default function SearchPage() {
             <option value="">Admin</option>
           </select>
           <input
+            className="affiliation_opt"
             type="text"
             placeholder="Search"
             value={searchTerm}
@@ -79,7 +84,16 @@ export default function SearchPage() {
           />
         </div>
         <hr />
-        <div className="flex-row header_names">Event Name</div>
+        <div className="flex-row header_names">
+          <div>Event Name</div>
+          <div>Purpose</div>
+          <div>Venue</div>
+          <div>Time</div>
+          <div>Date</div>
+          <div>College</div>
+          <div>Venue</div>
+          <div>Status</div>
+        </div>
         <div id="booking-column">
           {isLoading && <div>Loading...</div>}
           {error && <div>Error: {error.message}</div>}

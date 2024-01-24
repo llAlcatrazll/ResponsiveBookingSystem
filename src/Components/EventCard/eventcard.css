@@ -57,3 +57,8 @@
 .event_card_components > div > button:hover {
   background-color: red;
 }
+.deleted_row {
+  color: white;
+  display: none;
+  height: -100px;
+}

@@ -8,7 +8,7 @@ import BookingListPage from "../../Components/TopNavComponents/BookingList/Booki
 import CreateBookingPage from "../../Components/TopNavComponents/CreateBooking/CreateBookingPage";
 import SearchPage from "../../Components/TopNavComponents/Search/SearchPage";
 
-const UserName = "College of Engineering";
+const UserName = "AGSO";
 export default function LandingPage() {
   const isMobile = useMediaQuery({
     query: "(min-width: 320px) and (max-width: 425px)",

@@ -54,8 +54,13 @@ export default function Bookinglistpage() {
     <div className="booking_list_bg">
       <div id="booking_list ">
         <h2>Booking List</h2>
-        <div>
-          <select name="" id="" onChange={(e) => setSortField(e.target.value)}>
+        <div className="flex-row">
+          <p>Sort_By</p>
+          <select
+            name=""
+            className="affiliation_opt"
+            onChange={(e) => setSortField(e.target.value)}
+          >
             <option value="date">Date</option>
             <option value="time">Time</option>
             <option value="facility">Facility</option>

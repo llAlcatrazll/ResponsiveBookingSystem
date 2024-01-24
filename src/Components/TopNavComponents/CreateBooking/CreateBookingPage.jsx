@@ -11,6 +11,7 @@ export default function CreateBookingPage() {
   const [EndingTimeofEvent, setEndingTimeofEvent] = useState();
   const [StartingTimeofEvent, setStartingTimeofEvent] = useState();
   const [DetailsConfirmation, setDetailsConfirmation] = useState(false);
+
   const [Facility, setFacility] = useState(false);
   const [CollegeAffiliation, setCollegeAffiliation] = useState();
   const [Room, setRoom] = useState(false);
@@ -117,12 +118,14 @@ export default function CreateBookingPage() {
         />
         <span className="flex-row">
           <input
+            id="Time_opt"
             required
             type="time"
             value={StartingTimeofEvent}
             onChange={(e) => setStartingTimeofEvent(e.target.value)}
           />
           <input
+            id="Time_opt"
             required
             type="time"
             value={EndingTimeofEvent}
@@ -149,6 +152,7 @@ export default function CreateBookingPage() {
           >
             {Facility && (
               <>
+                <option value="">Facility Option</option>
                 <option value="gymnasium">Gymnasium</option>
                 <option value="hehall">HE Hall</option>
                 <option value="coindregrounds">Coindre Grounds</option>
@@ -161,6 +165,7 @@ export default function CreateBookingPage() {
 
             {Room && (
               <>
+                <option value="">Room Option</option>
                 <option value="m116">M116</option>
                 <option value="m118">M118</option>
                 <option value="m120">M120</option>
@@ -172,7 +177,7 @@ export default function CreateBookingPage() {
         <span id="flex-row">
           <select
             name=""
-            id=""
+            className="affiliation_opt"
             required
             onChange={handleCollegeAffiliationChange}
           >
@@ -194,8 +199,13 @@ export default function CreateBookingPage() {
         StartingTimeofEvent &&
         EndingTimeofEvent ? (
           <>
-            <button type="Submit" onClick={handleSubmit}>
-              {/* onClick={details_popup}> */}
+            <button
+              type="Submit"
+              onClick={(e) => {
+                handleSubmit(e);
+                details_popup(e);
+              }}
+            >
               Continue
             </button>
           </>
@@ -207,8 +217,9 @@ export default function CreateBookingPage() {
 
         {DetailsConfirmation ? (
           <>
-            <div id="bg_blurr">.</div>
-            <div id="details_confirmation_box">
+            <div className="postion_index_9">submitted</div>
+            {/* <div id="bg_blurr">.</div>
+            <div id="details_confirmation_box position_index_9">
               <div className="flex-display--column">
                 <h2>Confirm your Details</h2>
                 <p>{NameofEvent}</p>
@@ -230,7 +241,7 @@ export default function CreateBookingPage() {
                 Submit
               </button>
               <button>Cancel</button>
-            </div>
+            </div> */}
           </>
         ) : (
           <></>

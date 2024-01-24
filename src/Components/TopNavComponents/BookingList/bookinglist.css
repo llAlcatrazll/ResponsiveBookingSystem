@@ -18,7 +18,6 @@
   width: 1560px;
   height: 650px;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 .header_names > div {
   background-color: yellow;
@@ -26,4 +25,23 @@
   text-align: center;
   border-left: solid 1px black;
   font-weight: 700;
+}
+.flex-row > select {
+  max-width: 300px;
+  margin-top: 20px;
+  align-self: center;
+}
+.flex-row > p {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+#position_index_9 {
+  z-index: 999;
+  position: absolute;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  margin-left: 200px;
 }
